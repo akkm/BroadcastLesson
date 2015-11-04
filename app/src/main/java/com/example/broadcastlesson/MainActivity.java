@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 書く
+        // TODO 2 "ACTION_SCHOO" のBroadcastを受信開始する
         IntentFilter filter = new IntentFilter("ACTION_SCHOO");
         mReceiver = new MyReceiver();
         registerReceiver(mReceiver, filter);
@@ -25,11 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        // TODO 3 受信を終了する
         unregisterReceiver(mReceiver);
         super.onDestroy();
     }
 
-    // 書く
+    // TODO 1 TextViewに "Message" を表示するクラス MyReceiver を作成する
     private class MyReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
